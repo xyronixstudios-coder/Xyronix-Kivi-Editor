@@ -1,67 +1,129 @@
-# Xyronix Kivi Editor
+# 🥝 Xyronix Kivi Editor
 
-Modern, modeless (nano-style) terminal text editor written in Go.
+> A modern, modeless terminal text editor written in Go.
+> By **Eren Mut** · [Xyronix Studios](https://github.com/xyronixstudios-coder)
 
-**Author:** Eren Mut  
-**Studio:** Xyronix Studios  
-**Version:** 1.0.7  
-**Binary:** `kivi`  
-**Module:** `xyronix-kivi-editor`
+[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+[![Go Version](https://img.shields.io/badge/Go-1.20%2B-00ADD8.svg)](https://go.dev/)
 
-## Features
+[🇹🇷 Türkçe](README.tr.md)
 
-- Modeless editing (no hjkl, no modes)
-- Kivi-green theme tuned for dark terminals
-- Mouse: click, drag to select, wheel to scroll
+---
+
+## 🥝 What is Kivi?
+
+**Xyronix Kivi Editor** (short: **kivi**) is a lightweight, modeless
+terminal text editor inspired by GNU nano but modernized for 2026.
+
+Unlike **vi/vim**, kivi is **modeless**: every printable key inserts
+text immediately, commands live only on `Ctrl` combinations. No `hjkl`,
+no `:wq`, no `Esc`-to-return, no hidden modes.
+
+Unlike **nano**, kivi has:
+
+- A modern **kivi-green** color theme
+- Real **mouse support**: click, drag-select, wheel scroll
 - Auto-copy on selection release (OSC 52)
-- UTF-8 / multi-language support
-- Live window resize
-- Nano-compatible keybindings
+- **UTF-8** native, multi-language support
+- Live **SIGWINCH** redraw on terminal resize
+- Clean **Go** codebase (bubbletea + lipgloss)
 
-## Quick install
+---
 
-    git clone <repo> xyronix-kivi
-    cd xyronix-kivi
+## ✨ Features
+
+| Category | Feature |
+|----------|---------|
+| **Editing** | Modeless, no hjkl, no insert mode |
+| **Input** | Full UTF-8, CJK wide-char aware |
+| **Mouse** | Click, drag-select, wheel, auto-copy |
+| **Display** | Kivi-green theme, line numbers, tilde |
+| **Resize** | Live redraw on SIGWINCH |
+| **Keys** | Nano-compatible (^O, ^X, ^W, ^K, ^U, ^A, ^E) |
+| **I/O** | Open, save, save-as, quit-with-prompt |
+| **Search** | Forward search with wrap-around |
+
+---
+
+## 🚀 Installation
+
+### Quick install
+
+    git clone git@github.com:xyronixstudios-coder/Xyronix-Kivi-Editor.git
+    cd Xyronix-Kivi-Editor
     ./install.sh
 
-The installer detects your distribution (Debian, Arch, Fedora, openSUSE,
-Alpine) and installs Go if needed.
+Supported: **Debian** (Debian, Ubuntu, Mint, Pop, Kali, Jubatus),
+**Arch** (Manjaro, EndeavourOS), **Fedora** (RHEL, CentOS, Rocky),
+**SUSE**, **Alpine**, **Void**, **Gentoo**, **NixOS**.
 
-## Manual build
+### Manual build
 
     make
     sudo make install
 
-## Usage
+---
 
-    kivi [file]
-    kivi --version
-    kivi --help
+## 🎮 Usage
 
-## Keybindings
+    kivi                    # empty buffer
+    kivi notes.txt          # open a file
+    kivi ~/config/app.conf  # path
+    kivi --version          # version + author
+    kivi --help             # help
+
+---
+
+## ⌨️ Keybindings
 
 | Key | Action |
 |-----|--------|
 | `Ctrl+O` | Save |
-| `Ctrl+X` | Exit (asks if modified) |
+| `Ctrl+X` | Exit (prompts if modified) |
 | `Ctrl+R` | Open file |
 | `Ctrl+W` | Search |
-| `Ctrl+K` | Cut line or selection |
-| `Ctrl+U` | Paste |
-| `Ctrl+C` | Copy selection |
+| `Alt+W`  | Search again |
+| `Ctrl+K` | Cut (line or selection) |
+| `Ctrl+U` | Paste cut buffer |
+| `Ctrl+C` | Copy selection / cursor position |
 | `Ctrl+A` | Home |
 | `Ctrl+E` | End |
-| `Ctrl+Y` | Page up |
-| `Ctrl+V` | Page down |
+| `Ctrl+Y` | Page Up |
+| `Ctrl+V` | Page Down |
 | `Ctrl+G` | Help |
 
-## Mouse
+---
 
-- Click to place cursor
-- Drag to select text
-- Release to copy selection to clipboard
-- Wheel to scroll
+## 🖱️ Mouse support
 
-## License
+| Action | Effect |
+|--------|--------|
+| **Left click** | Place cursor |
+| **Left drag** | Select text |
+| **Release** | Auto-copy selection (OSC 52) |
+| **Wheel** | Scroll view |
 
-GPL-2.0
+---
+
+## 📜 License
+
+**GNU General Public License v2.0** — see [LICENSE](LICENSE).
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+---
+
+## 🙏 Credits
+
+- **Author:** Eren Mut
+- **Studio:** [Xyronix Studios](https://github.com/xyronixstudios-coder)
+- **Built with:** [bubbletea](https://github.com/charmbracelet/bubbletea),
+  [lipgloss](https://github.com/charmbracelet/lipgloss)
+- **Inspired by:** GNU nano, Pico
+
+---
+
+<p align="center">Made with 🥝 in Turkey</p>
