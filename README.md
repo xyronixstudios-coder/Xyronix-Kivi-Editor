@@ -64,4 +64,4 @@ Alpine) and installs Go if needed.
 
 ## License
 
-MIT
+GPL-2.0
